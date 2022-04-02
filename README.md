@@ -1,0 +1,1 @@
+# rinckandmorty-flutter

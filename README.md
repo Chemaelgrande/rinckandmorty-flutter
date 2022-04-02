@@ -21,5 +21,6 @@ Importar los recursos de nuestro proyecto
 Definir las rutas de nuestro proyecto.
 
 - Definimos la Home como primera página.
+- Definimos las rutas de los Personajes y Detalles del Personaje.
 
 

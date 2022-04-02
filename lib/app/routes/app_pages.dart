@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/character/bindings/character_binding.dart';
 import '../modules/character/views/character_view.dart';
-import '../modules/character_details/bindings/character_details_binding.dart';
-import '../modules/character_details/views/character_details_view.dart';
+
+import '../modules/character/views/character_details_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 
@@ -28,7 +28,6 @@ class AppPages {
     GetPage(
       name: _Paths.CHARACTER_DETAILS,
       page: () => CharacterDetailsView(),
-      binding: CharacterDetailsBinding(),
     ),
   ];
 }

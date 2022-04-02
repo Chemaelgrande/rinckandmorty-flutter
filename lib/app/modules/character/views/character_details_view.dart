@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/character_details_controller.dart';
-
-class CharacterDetailsView extends GetView<CharacterDetailsController> {
+class CharacterDetailsView extends GetView {
   const CharacterDetailsView({Key? key}) : super(key: key);
 
   @override

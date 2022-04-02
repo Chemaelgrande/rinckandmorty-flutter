@@ -11,7 +11,15 @@ Definir la estructura del proyecto
 Importar los recursos de nuestro proyecto
 
 - Importación de imagenes.
+    - Exportar los recursos desde Figma.
+    - Al no poderlos exportar definimos las imagenes de forma aleatoria.
 - Importación de modelos en forma de json. 
-    - Para definir los modelos podemos usar la herramienta de Postman.
+    - Para definir los json podemos usar la herramienta de Postman.
+
+## Paso 3:
+
+Definir las rutas de nuestro proyecto.
+
+- Definimos la Home como primera página.
 
 

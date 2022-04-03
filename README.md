@@ -56,5 +56,12 @@
 - Creamos el widget que agrupa los textos dentro de la CardCharacter ya que va a ser reutilizado dentro de la card.
 
 
+## Paso 6
+
+### Recibir datos de los personajes desde la API
+
+- Crear el modelo "personaje".
+
+
 
 

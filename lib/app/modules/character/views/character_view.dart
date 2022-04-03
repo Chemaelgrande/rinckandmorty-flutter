@@ -55,17 +55,23 @@ class CharacterView extends GetView<CharacterController> {
                 ],
               ),
             ),
-            Container(
-              color: AppColors.COLOR_WHITE,
-              padding:
-                  EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 60),
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 4,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return CardCharacter();
-                },
+            Obx(
+              () => Container(
+                color: AppColors.COLOR_WHITE,
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
+                  top: 15,
+                  bottom: 60,
+                ),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: controller.characters.length,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return CardCharacter();
+                  },
+                ),
               ),
             ),
             Container(

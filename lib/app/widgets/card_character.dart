@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
-import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/widgets/buttons/favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/text_character_card.dart';
 

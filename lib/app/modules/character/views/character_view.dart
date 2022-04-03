@@ -70,11 +70,15 @@ class CharacterView extends GetView<CharacterController> {
                     ),
                     child: ListView.builder(
                       shrinkWrap: true,
-                      itemCount: controller.characters.length,
+                      itemCount: (controller.searchCharacters.isEmpty)
+                          ? controller.characters.length
+                          : controller.searchCharacters.length,
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
                         return CardCharacter(
-                          character: controller.characters[index],
+                          character: (controller.searchCharacters.isEmpty)
+                              ? controller.characters[index]
+                              : controller.searchCharacters[index],
                         );
                       },
                     ),

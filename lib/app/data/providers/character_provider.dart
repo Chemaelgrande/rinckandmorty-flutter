@@ -36,6 +36,23 @@ class CharacterProvider extends GetConnect {
             .toList(),
       );
 
+  Future<Response<List<Character>>> getCharacterByCategory({
+    String? status,
+    String? gender,
+    String? name,
+  }) async =>
+      await get(
+        'character/',
+        query: {
+          'name': '$name',
+          'status': '$status',
+          'gender': '$gender',
+        },
+        decoder: (list) => list['results']
+            .map<Character>((e) => Character.fromJson(e))
+            .toList(),
+      );
+
   Future<Response<Character>> getCharacter(int id) async =>
       await get('character/$id');
   Future<Response<Character>> postCharacter(Character character) async =>

@@ -8,6 +8,8 @@ class CharacterController extends GetxController {
   var page = 0.obs;
   var isLoading = false.obs;
   var nameSearchCharacter = ''.obs;
+  var statusSearchCharacter = ''.obs;
+  var genderSearchCharacter = ''.obs;
 
   TextEditingController searchQueryController = TextEditingController();
   Rx<bool> isSearching = false.obs;
@@ -69,5 +71,28 @@ class CharacterController extends GetxController {
     FocusScope.of(context).requestFocus(new FocusNode());
     isSearching.value = false;
     _searchCharacters.clear();
+  }
+
+  Future<void> getAllSearchCharactersByCategory() async {
+    isLoading.value = true;
+
+    try {
+      final response = await characterProvider.getCharacterByCategory(
+        name: nameSearchCharacter.value,
+        status: (statusSearchCharacter.value == "unknown1" ||
+                statusSearchCharacter.value == "unknown2")
+            ? "unknown"
+            : statusSearchCharacter.value,
+        gender: genderSearchCharacter.value,
+      );
+      _searchCharacters.clear();
+      _searchCharacters.addAll(response.body!);
+      print(_searchCharacters);
+
+      update();
+    } catch (e) {
+      log("$e");
+    }
+    isLoading.value = false;
   }
 }

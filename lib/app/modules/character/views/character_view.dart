@@ -8,6 +8,7 @@ import 'package:rickandmorty/app/widgets/buttons/button_search_widget.dart';
 import 'package:rickandmorty/app/widgets/buttons/favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/buttons/popupmenu_button_widget.dart';
 import 'package:rickandmorty/app/widgets/card_character.dart';
+import 'package:rickandmorty/app/widgets/row_categories.dart';
 import '../controllers/character_controller.dart';
 
 class CharacterView extends GetView<CharacterController> {
@@ -40,6 +41,31 @@ class CharacterView extends GetView<CharacterController> {
                         ButtonSearchWidget(),
                         Spacer(),
                         PopupmenuButtonWidget()
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: AppColors.COLOR_WHITE,
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        RowCategories(
+                          categories: ["alive", "dead", "unknown1"],
+                          category: "status",
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        RowCategories(
+                          categories: [
+                            "female",
+                            "male",
+                            "genderless",
+                            "unknown2"
+                          ],
+                          category: "gender",
+                        ),
                       ],
                     ),
                   ),

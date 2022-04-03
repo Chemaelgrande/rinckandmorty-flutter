@@ -25,12 +25,18 @@ Definir las rutas de nuestro proyecto.
 
 ## Paso 4:
 
-Definir el tema de nuestra aplicación
+Definir el tema de nuestra aplicación.
 
 - Para mayor rapidez en el desarrollo aplicamos la fuente de "Montserrat" que proviene del paquete de Google Fonts. (Fuente principal en el diseño de Figma)
 
 - Definimos los colores y los textos en theme/app_colors.dart y theme/app_fonts.dart
 
 - Nota: Los tamaños y los colores se encuentran definidos tal y como se interpreta desde el diseño de Figma. 
+
+## Paso 5:
+
+Crear widgets globales.
+
+- Creamos el widget Button como widget global ya que va a ser reutilizado en nuestra app.
 
 

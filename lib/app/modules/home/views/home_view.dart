@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
+import 'package:rickandmorty/app/widgets/button_widget.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -51,21 +53,12 @@ class HomeView extends GetView<HomeController> {
                     )
                   ],
                 ),
-                ElevatedButton(
-                  child: const Padding(
-                    padding: EdgeInsets.fromLTRB(45, 10.0, 45, 10.0),
-                    child: Text(
-                      'Continuar',
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      elevation: 0.0,
-                      primary: AppColors.COLOR_BLUE,
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(40))),
-                      textStyle: const TextStyle(fontSize: 18)),
-                  onPressed: () {},
+                ButtonWidget(
+                  text: "Continuar",
+                  onPressed: () {
+                    print("hola");
+                    Get.offNamed(Routes.CHARACTER);
+                  },
                 )
               ],
             ),

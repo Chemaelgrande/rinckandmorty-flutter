@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 
 import '../modules/character/bindings/character_binding.dart';
@@ -17,17 +19,17 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
+      page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.CHARACTER,
-      page: () => CharacterView(),
+      page: () => const CharacterView(),
       binding: CharacterBinding(),
     ),
     GetPage(
       name: _Paths.CHARACTER_DETAILS,
-      page: () => CharacterDetailsView(),
+      page: () => const CharacterDetailsView(),
     ),
   ];
 }

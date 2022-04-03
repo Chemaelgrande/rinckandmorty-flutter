@@ -33,10 +33,16 @@ Definir el tema de nuestra aplicación.
 
 - Nota: Los tamaños y los colores se encuentran definidos tal y como se interpreta desde el diseño de Figma. 
 
+- Nota: Los iconos no han sido exportados y globalizados desde figma. Se utilizarán lo iconos proporcionados por Flutter.
+
 ## Paso 5:
 
 Crear widgets globales.
 
+- Creamos un widget con el background Image ya que va a ser reutilizado en nuestra app.
 - Creamos el widget Button como widget global ya que va a ser reutilizado en nuestra app.
+- Creamos el widget ButtonSearch como widget global.
+- Creamos el widget PopupmenuButton como widget global.
+- Creamos el widget FavouriteButton como widget global ya que va a ser reutilizado en nuestra app.
 
 

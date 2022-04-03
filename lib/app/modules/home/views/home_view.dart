@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
-import 'package:rickandmorty/app/widgets/button_widget.dart';
+import 'package:rickandmorty/app/widgets/background_image.dart';
+import 'package:rickandmorty/app/widgets/buttons/button_widget.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -15,19 +16,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            color: Colors.black,
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Opacity(
-              opacity: 0.2,
-              child: Image.asset(
-                "assets/images/space-image-rickandmorty.png",
-                fit: BoxFit.fitHeight,
-                colorBlendMode: BlendMode.modulate,
-              ),
-            ),
-          ),
+          BackgroundImage(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Column(

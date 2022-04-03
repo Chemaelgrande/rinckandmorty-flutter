@@ -1,16 +1,42 @@
 # rickandmorty
 
-A new Flutter project.
+## Paso 1: 
 
-## Getting Started
+Definir la estructura del proyecto
 
-This project is a starting point for a Flutter application.
+- Getx: Nos permite una estructura escalable y dinámica.
 
-A few resources to get you started if this is your first Flutter project:
+## Paso 2:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Importar los recursos de nuestro proyecto
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Importación de imagenes.
+    - Exportar los recursos desde Figma.
+    - Al no poderlos exportar definimos las imagenes de forma aleatoria.
+- Importación de modelos en forma de json. 
+    - Para definir los json podemos usar la herramienta de Postman.
+
+## Paso 3:
+
+Definir las rutas de nuestro proyecto.
+
+- Definimos la Home como primera página.
+- Definimos las rutas de los Personajes y Detalles del Personaje.
+
+## Paso 4:
+
+Definir el tema de nuestra aplicación.
+
+- Para mayor rapidez en el desarrollo aplicamos la fuente de "Montserrat" que proviene del paquete de Google Fonts. (Fuente principal en el diseño de Figma)
+
+- Definimos los colores y los textos en theme/app_colors.dart y theme/app_fonts.dart
+
+- Nota: Los tamaños y los colores se encuentran definidos tal y como se interpreta desde el diseño de Figma. 
+
+## Paso 5:
+
+Crear widgets globales.
+
+- Creamos el widget Button como widget global ya que va a ser reutilizado en nuestra app.
+
+

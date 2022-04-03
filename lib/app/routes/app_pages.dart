@@ -29,7 +29,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CHARACTER_DETAILS,
-      page: () => const CharacterDetailsView(),
+      page: () => CharacterDetailsView(),
     ),
   ];
 }

@@ -51,7 +51,11 @@ class CharacterView extends GetView<CharacterController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         RowCategories(
-                          categories: ["alive", "dead", "unknown1"],
+                          categories: [
+                            "alive",
+                            "dead",
+                            "unknown1",
+                          ],
                           category: "status",
                         ),
                         SizedBox(

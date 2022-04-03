@@ -14,7 +14,7 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       child: Padding(
-        padding: EdgeInsets.fromLTRB(45, 10.0, 45, 10.0),
+        padding: const EdgeInsets.fromLTRB(45, 10.0, 45, 10.0),
         child: Text(
           text,
         ),

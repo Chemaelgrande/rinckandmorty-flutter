@@ -2,13 +2,13 @@
 
 ## Paso 1: 
 
-Definir la estructura del proyecto
+### Definir la estructura del proyecto
 
 - Getx: Nos permite una estructura escalable y dinámica.
 
 ## Paso 2:
 
-Importar los recursos de nuestro proyecto
+### Importar los recursos de nuestro proyecto
 
 - Importación de imagenes.
     - Exportar los recursos desde Figma.
@@ -18,14 +18,14 @@ Importar los recursos de nuestro proyecto
 
 ## Paso 3:
 
-Definir las rutas de nuestro proyecto.
+### Definir las rutas de nuestro proyecto.
 
 - Definimos la Home como primera página.
 - Definimos las rutas de los Personajes y Detalles del Personaje.
 
 ## Paso 4:
 
-Definir el tema de nuestra aplicación.
+### Definir el tema de nuestra aplicación.
 
 - Para mayor rapidez en el desarrollo aplicamos la fuente de "Montserrat" que proviene del paquete de Google Fonts. (Fuente principal en el diseño de Figma)
 
@@ -37,12 +37,24 @@ Definir el tema de nuestra aplicación.
 
 ## Paso 5:
 
-Crear widgets globales.
+### Crear widgets globales.
+
+#### Background.
 
 - Creamos un widget con el background Image ya que va a ser reutilizado en nuestra app.
+
+#### Botones.
+
 - Creamos el widget Button como widget global ya que va a ser reutilizado en nuestra app.
 - Creamos el widget ButtonSearch como widget global.
 - Creamos el widget PopupmenuButton como widget global.
 - Creamos el widget FavouriteButton como widget global ya que va a ser reutilizado en nuestra app.
+
+#### Cartas.
+
+- Creamos el widget de CardCharacter como widget global ya que va a ser reutilizado en nuestra app.
+- Creamos el widget que agrupa los textos dentro de la CardCharacter ya que va a ser reutilizado dentro de la card.
+
+
 
 

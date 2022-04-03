@@ -7,6 +7,7 @@ import 'package:rickandmorty/app/widgets/background_image.dart';
 import 'package:rickandmorty/app/widgets/buttons/button_search_widget.dart';
 import 'package:rickandmorty/app/widgets/buttons/favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/buttons/popupmenu_button_widget.dart';
+import 'package:rickandmorty/app/widgets/card_character.dart';
 
 import '../controllers/character_controller.dart';
 
@@ -54,16 +55,18 @@ class CharacterView extends GetView<CharacterController> {
                 ],
               ),
             ),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 4,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return Container(
-                  height: 200,
-                  color: Colors.red,
-                );
-              },
+            Container(
+              color: AppColors.COLOR_WHITE,
+              padding:
+                  EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 60),
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: 4,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return CardCharacter();
+                },
+              ),
             ),
             Container(
               color: Colors.transparent,

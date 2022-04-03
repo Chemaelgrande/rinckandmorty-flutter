@@ -7,7 +7,9 @@ class FavouriteButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        print("hola");
+      },
       child: Container(
         decoration: const BoxDecoration(
           color: AppColors.COLOR_LIGHT_GREY,

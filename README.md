@@ -61,6 +61,13 @@
 ### Recibir datos de los personajes desde la API
 
 - Crear el modelo "personaje".
+- Crear el provider y controlador para recibir los datos desde la API.
+- Recibir los datos en la pantalla correspondiente.
+
+### Añadir mas datos incrementando la page de la API
+
+- Creamos la función correspondiente en el controlador.
+- Utilizamos el paquete lazyload para cargar mas datos en la pantalla incrementando la página.
 
 
 

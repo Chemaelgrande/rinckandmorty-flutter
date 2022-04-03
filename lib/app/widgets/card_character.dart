@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:rickandmorty/app/data/models/character_model.dart';
+import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/widgets/buttons/favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/text_character_card.dart';
 
 class CardCharacter extends StatelessWidget {
-  const CardCharacter({Key? key}) : super(key: key);
+  final Character character;
+  const CardCharacter({
+    Key? key,
+    required this.character,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +26,8 @@ class CardCharacter extends StatelessWidget {
             ),
             child: Stack(
               children: [
-                Image.asset(
-                  "assets/images/other-image-rickandmorty.jpeg",
+                Image.network(
+                  character.image!,
                   width: 154,
                   height: 154,
                   fit: BoxFit.fill,
@@ -37,24 +43,25 @@ class CardCharacter extends StatelessWidget {
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 TextCharacterCard(
-                  title: "Title",
-                  subtitle: "Never Ricking Morty",
+                  title: character.status! + " - " + character.species!,
+                  subtitle: character.name!,
+                  status: character.status!,
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 TextCharacterCard(
-                  title: "Title",
-                  subtitle: "Subtitle",
+                  title: "Last Know location:",
+                  subtitle: character.location!.name!,
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 TextCharacterCard(
-                  title: "Title",
-                  subtitle: "Subtitle",
+                  title: "First seen in:",
+                  subtitle: character.origin!.name!,
                 ),
               ],
             ),

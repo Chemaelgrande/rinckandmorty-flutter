@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/modules/character/controllers/character_controller.dart';
 import 'package:rickandmorty/app/routes/app_pages.dart';
-import 'package:rickandmorty/app/widgets/card_character.dart';
+import 'package:rickandmorty/app/widgets/cards/card_character.dart';
 
 class LoadInteresantCharacter extends StatelessWidget {
   const LoadInteresantCharacter({

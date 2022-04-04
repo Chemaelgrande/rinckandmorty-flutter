@@ -5,7 +5,7 @@ import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
 
-import 'buttons/favourite_button_widget.dart';
+import '../buttons/favourite_button_widget.dart';
 
 class TopDetailsCharacterWidget extends StatelessWidget {
   final Character character;

@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
-import 'package:rickandmorty/app/widgets/background_image.dart';
+import 'package:rickandmorty/app/widgets/layout/background_image.dart';
 import 'package:rickandmorty/app/widgets/buttons/button_widget.dart';
-import 'package:rickandmorty/app/widgets/card_information_character.dart';
-import 'package:rickandmorty/app/widgets/load_episodes_widget.dart';
-import 'package:rickandmorty/app/widgets/load_interesant_character.dart';
-import 'package:rickandmorty/app/widgets/top_details_character_widget.dart';
+import 'package:rickandmorty/app/widgets/cards/card_information_character.dart';
+import 'package:rickandmorty/app/widgets/actions/load_episodes_widget.dart';
+import 'package:rickandmorty/app/widgets/actions/load_interesant_character.dart';
+import 'package:rickandmorty/app/widgets/layout/top_details_character_widget.dart';
 
 class CharacterDetailsView extends GetView {
   CharacterDetailsView({Key? key}) : super(key: key);

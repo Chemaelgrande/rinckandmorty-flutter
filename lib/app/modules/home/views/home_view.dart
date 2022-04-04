@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
-import 'package:rickandmorty/app/widgets/background_image.dart';
+import 'package:rickandmorty/app/widgets/layout/background_image.dart';
 import 'package:rickandmorty/app/widgets/buttons/button_widget.dart';
 
 class HomeView extends GetView {

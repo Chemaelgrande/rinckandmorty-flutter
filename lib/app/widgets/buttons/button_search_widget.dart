@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:rickandmorty/app/widgets/build_actions_search.dart';
-import 'package:rickandmorty/app/widgets/text_search_field.dart';
+import 'package:rickandmorty/app/widgets/actions/build_actions_search.dart';
+import 'package:rickandmorty/app/widgets/texts/text_search_field.dart';
 
 class ButtonSearchWidget extends StatelessWidget {
   const ButtonSearchWidget({Key? key}) : super(key: key);

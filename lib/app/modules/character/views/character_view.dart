@@ -4,11 +4,11 @@ import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
-import 'package:rickandmorty/app/widgets/background_image.dart';
+import 'package:rickandmorty/app/widgets/layout/background_image.dart';
 import 'package:rickandmorty/app/widgets/buttons/button_search_widget.dart';
 import 'package:rickandmorty/app/widgets/buttons/popupmenu_button_widget.dart';
-import 'package:rickandmorty/app/widgets/card_character.dart';
-import 'package:rickandmorty/app/widgets/row_categories.dart';
+import 'package:rickandmorty/app/widgets/cards/card_character.dart';
+import 'package:rickandmorty/app/widgets/texts/row_categories.dart';
 import '../controllers/character_controller.dart';
 
 class CharacterView extends GetView<CharacterController> {

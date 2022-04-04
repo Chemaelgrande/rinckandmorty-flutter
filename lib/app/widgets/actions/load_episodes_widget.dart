@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
 import 'package:rickandmorty/app/modules/character/controllers/episode_controller.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
-import 'package:rickandmorty/app/widgets/card_information_episode.dart';
+import 'package:rickandmorty/app/widgets/cards/card_information_episode.dart';
 
 class LoadEpisodesWidget extends StatelessWidget {
   final Character character;

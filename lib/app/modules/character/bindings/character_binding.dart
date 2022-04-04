@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/providers/character_provider.dart';
+import 'package:rickandmorty/app/data/providers/episode_provider.dart';
 
 import '../controllers/character_controller.dart';
 

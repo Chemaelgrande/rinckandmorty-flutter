@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:rickandmorty/api.dart';
+import 'package:rickandmorty/app/data/models/episode_model.dart';
 
 import '../models/character_model.dart';
 
@@ -52,11 +53,4 @@ class CharacterProvider extends GetConnect {
             .map<Character>((e) => Character.fromJson(e))
             .toList(),
       );
-
-  Future<Response<Character>> getCharacter(int id) async =>
-      await get('character/$id');
-  Future<Response<Character>> postCharacter(Character character) async =>
-      await post('character', character);
-  Future<Response> deleteCharacter(int id) async =>
-      await delete('character/$id');
 }

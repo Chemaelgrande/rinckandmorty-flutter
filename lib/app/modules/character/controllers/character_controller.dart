@@ -2,7 +2,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
+import 'package:rickandmorty/app/data/models/episode_model.dart';
 import 'package:rickandmorty/app/data/providers/character_provider.dart';
+import 'package:rickandmorty/app/data/providers/episode_provider.dart';
 
 class CharacterController extends GetxController {
   var page = 0.obs;

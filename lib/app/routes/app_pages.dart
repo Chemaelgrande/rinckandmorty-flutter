@@ -1,6 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
+import 'package:rickandmorty/app/data/models/episode_model.dart';
+import 'package:rickandmorty/app/modules/character/bindings/episode_binding.dart';
 
 import '../modules/character/bindings/character_binding.dart';
 import '../modules/character/views/character_view.dart';
@@ -30,6 +32,7 @@ class AppPages {
     GetPage(
       name: _Paths.CHARACTER_DETAILS,
       page: () => CharacterDetailsView(),
+      binding: EpisodeBinding(),
     ),
   ];
 }

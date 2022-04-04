@@ -36,7 +36,7 @@ class LoadEpisodesWidget extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
-                childAspectRatio: 1.5,
+                childAspectRatio: 1.4,
               ),
               itemBuilder: (context, index) {
                 return CardInformationEpisode(

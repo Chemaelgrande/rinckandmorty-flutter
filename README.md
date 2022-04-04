@@ -1,5 +1,19 @@
 # rickandmorty
 
+# ESTRUCTURA
+
+- Repositorio: GitHub
+- Metodologia: Git-flow - Uso de ramas.
+- Estructura en Flutter: Getx
+- Paquetes:
+    - google_fonts: Para las fuentes y temas de la app.
+    - Lazy_load: Carga de datos paginada.
+    - shared_preferences: Guardar datos de forma local.
+
+
+
+# STEP BY STEP
+
 ## Paso 1: 
 
 ### Definir la estructura del proyecto
@@ -68,6 +82,52 @@
 
 - Creamos la función correspondiente en el controlador.
 - Utilizamos el paquete lazyload para cargar mas datos en la pantalla incrementando la página.
+
+## Paso 7
+
+### Implementacion de Filtro: Buscar personaje
+
+- Creamos el widget button search para realizar las búsquedas en función del nombre del personaje
+- Creamos la función de búsqueda en el controlador
+- Filtrar los datos en la pantalla en función de la búsqueda agregada a una lista de personajes
+
+### Implementacion de Filtro: Genero y Status
+
+- Creamos los widgets correspondientes para filtrar por categorias
+- Creamos las funciones de búsqueda con el end point correspondiente en el controlador.
+- Filtramos los datos en la pantalla en función de la categoría selecionada
+
+#### NOTA: Cabe la posibilidad de que haya uno o mas filtros seleccionados.
+
+## Paso 8 
+
+### Navegación a pantalla de Detalles
+
+- Utilizamos Getx para la navegación entre pantallas
+
+### Implementación pantalla de Detalles
+
+- Implementamos el widget para la información del personaje correspondiente.
+- Creamoes el modelo episodio.
+- Implementamos el widget para los episodios del personaje correspondiente
+- Implementamos el boton ver mas que incremente los episodios de 4 en 4 en caso de que la lista lo permita.
+
+
+## Paso 9
+
+### Creación de Personajes interesantes
+
+- Implementamos una función random que devuelva 3 personajes aleatorios del endpoint correspondiente en el controlador.
+- Implementamos el widget para los personajes interesantes dentro de la pagina de Detalles.
+
+## Paso 10
+
+### Creación de favoritos
+
+- Crear una lista de personajes favoritos en el controlador con las funciones correspondientes.
+- Manejar los favoritos de forma local con el paquete shared_preferences.
+- Realizar el filtrado de los personajes también en si es o no favorito.
+
 
 
 

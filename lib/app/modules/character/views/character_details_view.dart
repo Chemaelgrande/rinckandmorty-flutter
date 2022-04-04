@@ -67,7 +67,7 @@ class CharacterDetailsView extends GetView {
                         crossAxisCount: 2,
                         mainAxisSpacing: 20,
                         crossAxisSpacing: 20,
-                        childAspectRatio: 2.5,
+                        childAspectRatio: 1.9,
                       ),
                     ),
                     const SizedBox(

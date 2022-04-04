@@ -23,6 +23,9 @@ class CharacterController extends GetxController {
   final _searchCharacters = <Character>[].obs;
   List<Character> get searchCharacters => _searchCharacters.toList();
 
+  final _interesatCharacters = <Character>[].obs;
+  List<Character> get interesatCharacters => _interesatCharacters.toList();
+
   final CharacterProvider characterProvider;
 
   CharacterController(this.characterProvider);
@@ -50,13 +53,14 @@ class CharacterController extends GetxController {
   }
 
   Future<void> getAllSearchCharacters(String newQuery) async {
+    _searchCharacters.clear();
     isLoading.value = true;
     isSearching.value = true;
     nameSearchCharacter.value = newQuery;
     try {
       final response = await characterProvider.getCharacterName(
           name: nameSearchCharacter.value);
-      _searchCharacters.clear();
+
       _searchCharacters.addAll(response.body!);
 
       update();
@@ -69,10 +73,11 @@ class CharacterController extends GetxController {
   void next() => page++;
 
   void clearSearchCharacters(context) {
+    nameSearchCharacter.value = '';
     searchQueryController.clear();
+    getAllSearchCharactersByCategory();
     FocusScope.of(context).requestFocus(new FocusNode());
     isSearching.value = false;
-    _searchCharacters.clear();
   }
 
   Future<void> getAllSearchCharactersByCategory() async {
@@ -92,6 +97,26 @@ class CharacterController extends GetxController {
       print(_searchCharacters);
 
       update();
+    } catch (e) {
+      log("$e");
+    }
+    isLoading.value = false;
+  }
+
+  Future<void> getFavourteCharactersByCategory() async {
+    isLoading.value = true;
+    _interesatCharacters.clear();
+    try {
+      for (var i = 1; i < 4; i++) {
+        final response = await characterProvider.getCharacterById(
+          id: i.toString(),
+        );
+        print(response);
+        _interesatCharacters.add(response.body!);
+        print(_interesatCharacters);
+
+        update();
+      }
     } catch (e) {
       log("$e");
     }

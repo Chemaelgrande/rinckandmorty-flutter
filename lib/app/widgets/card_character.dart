@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
+import 'package:rickandmorty/app/modules/character/controllers/character_controller.dart';
 import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/widgets/buttons/favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/text_character_card.dart';
 
 class CardCharacter extends StatelessWidget {
   final Character character;
+  final Function() onTap;
   const CardCharacter({
     Key? key,
     required this.character,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed(
-        Routes.CHARACTER_DETAILS,
-        arguments: character,
-      ),
+      onTap: onTap,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),

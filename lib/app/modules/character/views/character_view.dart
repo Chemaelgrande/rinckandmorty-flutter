@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
+import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
 import 'package:rickandmorty/app/widgets/background_image.dart';
@@ -106,6 +107,19 @@ class CharacterView extends GetView<CharacterController> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
                         return CardCharacter(
+                          onTap: () {
+                            Get.toNamed(
+                              Routes.CHARACTER_DETAILS,
+                              arguments: (controller.searchCharacters.isEmpty)
+                                  ? controller.characters[index]
+                                  : controller.searchCharacters[index],
+                            );
+                            CharacterController characterController =
+                                Get.find();
+
+                            characterController
+                                .getFavourteCharactersByCategory();
+                          },
                           character: (controller.searchCharacters.isEmpty)
                               ? controller.characters[index]
                               : controller.searchCharacters[index],

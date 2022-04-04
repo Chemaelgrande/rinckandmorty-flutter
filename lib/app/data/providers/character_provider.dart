@@ -53,4 +53,9 @@ class CharacterProvider extends GetConnect {
             .map<Character>((e) => Character.fromJson(e))
             .toList(),
       );
+
+  Future<Response<Character>> getCharacterById({
+    String? id,
+  }) async =>
+      await get('character/$id', decoder: (data) => Character.fromJson(data));
 }

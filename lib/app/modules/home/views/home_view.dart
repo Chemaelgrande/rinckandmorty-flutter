@@ -2,21 +2,18 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/routes/app_pages.dart';
-import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
 import 'package:rickandmorty/app/widgets/background_image.dart';
 import 'package:rickandmorty/app/widgets/buttons/button_widget.dart';
 
-import '../controllers/home_controller.dart';
-
-class HomeView extends GetView<HomeController> {
+class HomeView extends GetView {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          BackgroundImage(),
+          const BackgroundImage(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50.0),
             child: Column(
@@ -45,7 +42,6 @@ class HomeView extends GetView<HomeController> {
                 ButtonWidget(
                   text: "Continuar",
                   onPressed: () {
-                    print("hola");
                     Get.offNamed(Routes.CHARACTER);
                   },
                 )

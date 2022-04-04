@@ -5,7 +5,9 @@ import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/widgets/card_character.dart';
 
 class LoadInteresantCharacter extends StatelessWidget {
-  const LoadInteresantCharacter({Key? key}) : super(key: key);
+  const LoadInteresantCharacter({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class LoadInteresantCharacter extends StatelessWidget {
           ? ListView.builder(
               padding: EdgeInsets.zero,
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: characterController.interesatCharacters.length,
               itemBuilder: (context, index) => CardCharacter(
                 character: characterController.interesatCharacters[index],

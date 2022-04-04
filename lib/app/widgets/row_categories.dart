@@ -16,7 +16,7 @@ class RowCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CharacterController characterController = Get.find();
-    return Container(
+    return SizedBox(
       height: 50,
       child: ListView.builder(
           shrinkWrap: true,

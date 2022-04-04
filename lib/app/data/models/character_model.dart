@@ -11,6 +11,7 @@ class Character {
   List<String>? episode;
   String? url;
   String? created;
+  dynamic isFavourite;
 
   Character(
       {this.id,
@@ -24,7 +25,8 @@ class Character {
       this.image,
       this.episode,
       this.url,
-      this.created});
+      this.created,
+      this.isFavourite});
 
   Character.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -40,6 +42,7 @@ class Character {
     episode = json['episode'].cast<String>();
     url = json['url'];
     created = json['created'];
+    isFavourite = json['isFavourite'];
   }
 
   Map<String, dynamic> toJson() {
@@ -60,6 +63,7 @@ class Character {
     data['episode'] = episode;
     data['url'] = url;
     data['created'] = created;
+    data['isFavourite'] = isFavourite;
     return data;
   }
 }

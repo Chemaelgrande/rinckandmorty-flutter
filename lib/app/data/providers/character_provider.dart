@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:rickandmorty/api.dart';
-import 'package:rickandmorty/app/data/models/episode_model.dart';
 
 import '../models/character_model.dart';
 

@@ -6,7 +6,6 @@ import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
 import 'package:rickandmorty/app/widgets/background_image.dart';
 import 'package:rickandmorty/app/widgets/buttons/button_search_widget.dart';
-import 'package:rickandmorty/app/widgets/buttons/favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/buttons/popupmenu_button_widget.dart';
 import 'package:rickandmorty/app/widgets/card_character.dart';
 import 'package:rickandmorty/app/widgets/row_categories.dart';
@@ -47,7 +46,8 @@ class CharacterView extends GetView<CharacterController> {
                   ),
                   Container(
                     color: AppColors.COLOR_WHITE,
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
@@ -87,7 +87,7 @@ class CharacterView extends GetView<CharacterController> {
                         const SizedBox(
                           width: 10,
                         ),
-                        const FavouriteButtonWidget()
+                        //FavouriteButtonWidget()
                       ],
                     ),
                   ),
@@ -108,17 +108,17 @@ class CharacterView extends GetView<CharacterController> {
                       itemBuilder: (context, index) {
                         return CardCharacter(
                           onTap: () {
+                            CharacterController characterController =
+                                Get.find();
+
+                            characterController
+                                .getFavourteCharactersByCategory();
                             Get.toNamed(
                               Routes.CHARACTER_DETAILS,
                               arguments: (controller.searchCharacters.isEmpty)
                                   ? controller.characters[index]
                                   : controller.searchCharacters[index],
                             );
-                            CharacterController characterController =
-                                Get.find();
-
-                            characterController
-                                .getFavourteCharactersByCategory();
                           },
                           character: (controller.searchCharacters.isEmpty)
                               ? controller.characters[index]

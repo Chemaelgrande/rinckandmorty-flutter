@@ -11,7 +11,7 @@ class TextSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     CharacterController characterController = Get.find();
 
-    return Container(
+    return SizedBox(
       width: 150,
       child: TextField(
         focusNode: characterController.myFocusNode,

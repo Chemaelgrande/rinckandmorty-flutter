@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
-import 'package:rickandmorty/app/modules/character/controllers/character_controller.dart';
-import 'package:rickandmorty/app/modules/character/controllers/episode_controller.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
 import 'package:rickandmorty/app/widgets/background_image.dart';
@@ -18,7 +16,6 @@ class CharacterDetailsView extends GetView {
 
   @override
   Widget build(BuildContext context) {
-    EpisodeController episodeController = Get.find();
     return Scaffold(
       body: Stack(
         children: [
@@ -88,8 +85,8 @@ class CharacterDetailsView extends GetView {
                       "Personajes interesantes",
                       style: TEXT_THEME_BLACK.headline2,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20.0),
                       child: LoadInteresantCharacter(),
                     ),
                     Padding(
@@ -104,7 +101,7 @@ class CharacterDetailsView extends GetView {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               )
             ],

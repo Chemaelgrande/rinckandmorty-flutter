@@ -1,14 +1,52 @@
-import 'package:flutter/material.dart';
-import 'package:rickandmorty/app/theme/app_colors.dart';
+import 'dart:convert';
 
-class FavouriteButtonWidget extends StatelessWidget {
-  const FavouriteButtonWidget({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:rickandmorty/app/data/models/character_model.dart';
+import 'package:rickandmorty/app/modules/character/controllers/character_controller.dart';
+import 'package:rickandmorty/app/theme/app_colors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class FavouriteButtonWidget extends StatefulWidget {
+  final Character character;
+  const FavouriteButtonWidget({Key? key, required this.character})
+      : super(key: key);
 
   @override
+  State<FavouriteButtonWidget> createState() => _FavouriteButtonWidgetState();
+}
+
+class _FavouriteButtonWidgetState extends State<FavouriteButtonWidget> {
+  @override
   Widget build(BuildContext context) {
+    CharacterController characterController = Get.find();
     return GestureDetector(
-      onTap: () {
-        print("hola");
+      onTap: () async {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+
+        if (widget.character.isFavourite != null) {
+          widget.character.isFavourite = !widget.character.isFavourite!;
+        } else {
+          widget.character.isFavourite = true;
+        }
+
+        await characterController.getFavourites();
+
+        Character? findCharacter =
+            characterController.findCharacter(widget.character.id!);
+
+        if (findCharacter == null) {
+          characterController.addCharacterToList(widget.character);
+
+          await prefs.setString("favouritesCharacters",
+              jsonEncode(characterController.favouritesCharacters));
+        } else {
+          characterController.removeCharacterToList(widget.character);
+
+          await prefs.setString("favouritesCharacters",
+              jsonEncode(characterController.favouritesCharacters));
+        }
+        setState(() {});
       },
       child: Container(
         decoration: const BoxDecoration(
@@ -17,10 +55,12 @@ class FavouriteButtonWidget extends StatelessWidget {
         ),
         height: 36,
         width: 36,
-        child: const Icon(
+        child: Icon(
           Icons.star,
           size: 20,
-          color: AppColors.COLOR_GREY,
+          color: (widget.character.isFavourite == true)
+              ? Colors.yellow
+              : Colors.white,
         ),
       ),
     );

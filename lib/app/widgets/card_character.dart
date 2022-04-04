@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
-import 'package:rickandmorty/app/modules/character/controllers/character_controller.dart';
-import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/widgets/buttons/favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/text_character_card.dart';
 
@@ -38,10 +35,12 @@ class CardCharacter extends StatelessWidget {
                     height: 154,
                     fit: BoxFit.fill,
                   ),
-                  const Positioned(
+                  Positioned(
                     bottom: 10,
                     right: 10,
-                    child: FavouriteButtonWidget(),
+                    child: FavouriteButtonWidget(
+                      character: character,
+                    ),
                   )
                 ],
               ),
@@ -55,14 +54,14 @@ class CardCharacter extends StatelessWidget {
                     subtitle: character.name!,
                     status: character.status!,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   TextCharacterCard(
                     title: "Last Know location:",
                     subtitle: character.location!.name!,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   TextCharacterCard(

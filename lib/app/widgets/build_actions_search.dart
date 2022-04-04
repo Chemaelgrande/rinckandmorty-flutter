@@ -18,8 +18,7 @@ class BuildActionsSearch extends StatelessWidget {
                 color: AppColors.COLOR_WHITE,
               ),
               onPressed: () {
-                if (characterController.searchQueryController == null ||
-                    characterController.searchQueryController.text.isEmpty) {
+                if (characterController.searchQueryController.text.isEmpty) {
                   Navigator.pop(context);
                   return;
                 }

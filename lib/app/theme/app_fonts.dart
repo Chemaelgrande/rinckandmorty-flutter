@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 //TODO: Los textos comentados no se encuentran definidos en Figma
+
+// ignore: non_constant_identifier_names
 TextTheme TEXT_THEME_BLACK = TextTheme(
   headline1: GoogleFonts.montserrat(
     color: AppColors.COLOR_BLACK,
@@ -63,6 +65,7 @@ TextTheme TEXT_THEME_BLACK = TextTheme(
   ),
 );
 
+// ignore: non_constant_identifier_names
 TextTheme TEXT_THEME_WHITE = TextTheme(
   headline1: GoogleFonts.montserrat(
     color: AppColors.COLOR_WHITE,

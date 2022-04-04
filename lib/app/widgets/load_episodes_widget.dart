@@ -60,7 +60,7 @@ class LoadEpisodesWidget extends StatelessWidget {
                                 episodeController.incrementList.value + 4;
                           },
                           child: Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             child: Text(
                               "Ver mas",
                               style: TEXT_THEME_BLACK.button,

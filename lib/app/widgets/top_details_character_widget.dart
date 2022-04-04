@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
+import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
 
@@ -34,7 +35,9 @@ class TopDetailsCharacterWidget extends StatelessWidget {
           left: 20,
           child: IconButton(
             onPressed: () {
-              Get.back();
+              Get.offAllNamed(
+                Routes.CHARACTER,
+              );
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -45,7 +48,7 @@ class TopDetailsCharacterWidget extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 100.0),
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,10 +67,12 @@ class TopDetailsCharacterWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       bottom: 0,
                       left: 52,
-                      child: FavouriteButtonWidget(),
+                      child: FavouriteButtonWidget(
+                        character: character,
+                      ),
                     )
                   ],
                 ),

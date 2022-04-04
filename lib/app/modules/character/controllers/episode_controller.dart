@@ -1,11 +1,8 @@
 import 'dart:developer';
-
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:rickandmorty/app/data/models/character_model.dart';
 import 'package:rickandmorty/app/data/models/episode_model.dart';
 import 'package:rickandmorty/app/data/providers/episode_provider.dart';
-import 'package:rickandmorty/app/modules/character/controllers/character_controller.dart';
 
 class EpisodeController extends GetxController {
   final EpisodeProvider episodeProvider;
@@ -18,10 +15,6 @@ class EpisodeController extends GetxController {
   Future<void> getEpisodeCharacter(
     Character character,
   ) async {
-    CharacterController characterController = Get.find();
-
-    print(episodesCharacter.value);
-
     for (int i = 0; i < character.episode!.length; i++) {
       try {
         Response response =
@@ -30,7 +23,6 @@ class EpisodeController extends GetxController {
         var responseEpisode = response.body;
         episodesCharacter.value.add(Episode.fromJson(responseEpisode));
 
-        print(episodesCharacter.value);
         episodesCharacter.refresh();
       } catch (e) {
         log("$e");

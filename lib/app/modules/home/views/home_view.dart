@@ -19,9 +19,12 @@ class HomeView extends GetView {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                //BACKGROUND IMAGE
                 Image.asset(
                   "assets/images/rickandmorty-letters.png",
                 ),
+
+                //INFORMATION PAGE
                 Column(
                   children: [
                     Text(
@@ -39,6 +42,7 @@ class HomeView extends GetView {
                     )
                   ],
                 ),
+                //NAVIGATION BUTTON
                 ButtonWidget(
                   text: "Continuar",
                   onPressed: () {

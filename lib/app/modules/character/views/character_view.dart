@@ -20,6 +20,7 @@ class CharacterView extends GetView<CharacterController> {
       body: Stack(
         children: [
           const BackgroundImage(),
+          //LOAD CARDS BY LAZYLOAD
           Obx(
             () => LazyLoadScrollView(
               onEndOfPage: controller.next,
@@ -38,12 +39,14 @@ class CharacterView extends GetView<CharacterController> {
                         horizontal: 20, vertical: 24),
                     child: Row(
                       children: const [
+                        //FILTERS SECTION
                         ButtonSearchWidget(),
                         Spacer(),
                         PopupmenuButtonWidget()
                       ],
                     ),
                   ),
+                  //FILTERS BY CATEGORIES
                   Container(
                     color: AppColors.COLOR_WHITE,
                     padding: const EdgeInsets.symmetric(
@@ -74,6 +77,8 @@ class CharacterView extends GetView<CharacterController> {
                       ],
                     ),
                   ),
+
+                  //SHOW CARDS
                   Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 40),

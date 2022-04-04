@@ -26,6 +26,7 @@ class CharacterDetailsView extends GetView {
               TopDetailsCharacterWidget(
                 character: character,
               ),
+              //DETAILS CHARACTER
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
@@ -35,6 +36,7 @@ class CharacterDetailsView extends GetView {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //INFORMATION SECTION
                     Text(
                       "Informacion",
                       style: TEXT_THEME_BLACK.headline2,
@@ -71,6 +73,7 @@ class CharacterDetailsView extends GetView {
                     const SizedBox(
                       height: 20,
                     ),
+                    //EPISODES SECTION
                     Text(
                       "Episodios",
                       style: TEXT_THEME_BLACK.headline2,
@@ -81,6 +84,7 @@ class CharacterDetailsView extends GetView {
                         character: character,
                       ),
                     ),
+                    //INTERESANT CHARACTERS SECTION
                     Text(
                       "Personajes interesantes",
                       style: TEXT_THEME_BLACK.headline2,

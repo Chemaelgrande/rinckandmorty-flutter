@@ -9,7 +9,7 @@
     - Controller
     - View
 - Paquetes:
-  - google_fonts: Para las fuentes y temas de la app.
+    - google_fonts: Para las fuentes y temas de la app.
     - Lazy_load: Carga de datos paginada.
     - shared_preferences: Guardar datos de forma local.
 

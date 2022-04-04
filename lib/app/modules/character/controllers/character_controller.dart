@@ -122,4 +122,8 @@ class CharacterController extends GetxController {
     }
     isLoading.value = false;
   }
+
+  void clearListCharacters(context) {
+    _searchCharacters.clear();
+  }
 }

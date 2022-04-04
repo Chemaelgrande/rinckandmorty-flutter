@@ -20,6 +20,7 @@ class PopupmenuButtonWidget extends StatelessWidget {
             characterController.genderSearchCharacter.value = '';
             characterController.statusSearchCharacter.value = '';
             characterController.clearSearchCharacters(context);
+            characterController.clearListCharacters(context);
             break;
           default:
         }

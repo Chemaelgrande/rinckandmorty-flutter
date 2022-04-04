@@ -13,6 +13,7 @@ class CharacterController extends GetxController {
   var statusSearchCharacter = ''.obs;
   var genderSearchCharacter = ''.obs;
   RxBool isFavourite = false.obs;
+  RxBool listIsFavorite = false.obs;
 
   TextEditingController searchQueryController = TextEditingController();
   Rx<bool> isSearching = false.obs;

@@ -4,6 +4,7 @@ import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 import 'package:rickandmorty/app/routes/app_pages.dart';
 import 'package:rickandmorty/app/theme/app_colors.dart';
 import 'package:rickandmorty/app/theme/app_fonts.dart';
+import 'package:rickandmorty/app/widgets/buttons/favourite_buttons/list_favourite_button_widget.dart';
 import 'package:rickandmorty/app/widgets/layout/background_image.dart';
 import 'package:rickandmorty/app/widgets/buttons/button_search_widget.dart';
 import 'package:rickandmorty/app/widgets/buttons/popupmenu_button_widget.dart';
@@ -92,7 +93,7 @@ class CharacterView extends GetView<CharacterController> {
                         const SizedBox(
                           width: 10,
                         ),
-                        //FavouriteButtonWidget()
+                        const ListFavouriteButton()
                       ],
                     ),
                   ),
@@ -104,33 +105,61 @@ class CharacterView extends GetView<CharacterController> {
                       top: 15,
                       bottom: 60,
                     ),
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: (controller.searchCharacters.isEmpty)
-                          ? controller.characters.length
-                          : controller.searchCharacters.length,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return CardCharacter(
-                          onTap: () {
-                            CharacterController characterController =
-                                Get.find();
+                    child: (controller.listIsFavorite.value == true &&
+                            controller.favouritesCharacters.isEmpty)
+                        ? Column(
+                            children: [
+                              Text(
+                                'Ups',
+                                style: TEXT_THEME_BLACK.headline3,
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                "Parece que tu viaje\n a terminado",
+                                style: TEXT_THEME_BLACK.headline1,
+                                textAlign: TextAlign.center,
+                              )
+                            ],
+                          )
+                        : ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: (controller.listIsFavorite.value == true)
+                                ? controller.favouritesCharacters.length
+                                : (controller.searchCharacters.isEmpty)
+                                    ? controller.characters.length
+                                    : controller.searchCharacters.length,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              return CardCharacter(
+                                onTap: () {
+                                  CharacterController characterController =
+                                      Get.find();
 
-                            characterController
-                                .getFavourteCharactersByCategory();
-                            Get.toNamed(
-                              Routes.CHARACTER_DETAILS,
-                              arguments: (controller.searchCharacters.isEmpty)
-                                  ? controller.characters[index]
-                                  : controller.searchCharacters[index],
-                            );
-                          },
-                          character: (controller.searchCharacters.isEmpty)
-                              ? controller.characters[index]
-                              : controller.searchCharacters[index],
-                        );
-                      },
-                    ),
+                                  characterController
+                                      .getFavourteCharactersByCategory();
+                                  Get.toNamed(
+                                    Routes.CHARACTER_DETAILS,
+                                    arguments: (controller
+                                                .listIsFavorite.value ==
+                                            true)
+                                        ? controller.favouritesCharacters[index]
+                                        : (controller.searchCharacters.isEmpty)
+                                            ? controller.characters[index]
+                                            : controller
+                                                .searchCharacters[index],
+                                  );
+                                },
+                                character: (controller.listIsFavorite.value ==
+                                        true)
+                                    ? controller.favouritesCharacters[index]
+                                    : (controller.searchCharacters.isEmpty)
+                                        ? controller.characters[index]
+                                        : controller.searchCharacters[index],
+                              );
+                            },
+                          ),
                   ),
                   Container(
                     color: Colors.transparent,

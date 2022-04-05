@@ -13,7 +13,6 @@
     - Lazy_load: Carga de datos paginada.
     - shared_preferences: Guardar datos de forma local.
     - share_plus: Funcionalidad de compartir
-      __[https://flutteracademy.app](Flutteracademy - web propia)__
 
 # STEP BY STEP
 

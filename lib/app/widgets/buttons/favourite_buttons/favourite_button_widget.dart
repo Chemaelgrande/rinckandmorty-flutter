@@ -46,6 +46,11 @@ class _FavouriteButtonWidgetState extends State<FavouriteButtonWidget> {
           await prefs.setString("favouritesCharacters",
               jsonEncode(characterController.favouritesCharacters));
         }
+
+        await characterController.refreshInteresantCharacter();
+
+        await characterController.refreshFavouriteCharacter();
+
         setState(() {});
       },
       child: Container(

@@ -43,6 +43,7 @@ class CharacterController extends GetxController {
     super.onInit();
   }
 
+  //GEt ALL CHARACTERS PER PAGE
   Future<void> _getAllCharacters() async {
     isLoading.value = true;
     try {
@@ -64,6 +65,7 @@ class CharacterController extends GetxController {
     isLoading.value = false;
   }
 
+  //GET CHARACTERS BY FILTERS
   Future<void> getAllSearchCharacters(String newQuery) async {
     _searchCharacters.clear();
     isLoading.value = true;
@@ -88,24 +90,6 @@ class CharacterController extends GetxController {
       log("$e");
     }
     isLoading.value = false;
-  }
-
-  void next() => page++;
-
-  void clearSearchCharacters(context) {
-    nameSearchCharacter.value = '';
-    searchQueryController.clear();
-
-    if (statusSearchCharacter.value != '' ||
-        genderSearchCharacter.value != '' ||
-        nameSearchCharacter.value != '') {
-      getAllSearchCharactersByCategory();
-    } else {
-      _searchCharacters.clear();
-    }
-
-    FocusScope.of(context).requestFocus(FocusNode());
-    isSearching.value = false;
   }
 
   Future<void> getAllSearchCharactersByCategory() async {
@@ -137,7 +121,28 @@ class CharacterController extends GetxController {
     isLoading.value = false;
   }
 
-  Future<void> getFavourteCharactersByCategory() async {
+  void next() => page++;
+
+  //CLEAR FILTERS
+  void clearSearchCharacters(context) {
+    nameSearchCharacter.value = '';
+    searchQueryController.clear();
+
+    if (statusSearchCharacter.value != '' ||
+        genderSearchCharacter.value != '' ||
+        nameSearchCharacter.value != '') {
+      getAllSearchCharactersByCategory();
+    } else {
+      _searchCharacters.clear();
+    }
+
+    FocusScope.of(context).requestFocus(FocusNode());
+    isSearching.value = false;
+  }
+
+  //GET INTERESANT CHARACTERS
+
+  Future<void> getInteresantCharacters() async {
     isLoading.value = true;
     _interesatCharacters.clear();
     try {
@@ -149,6 +154,15 @@ class CharacterController extends GetxController {
 
         update();
       }
+
+      for (var i = 0; i < _interesatCharacters.length; i++) {
+        Character findElement = _favouritesCharacters
+            .firstWhere((element) => element.id == _interesatCharacters[i].id);
+        _interesatCharacters
+            .removeWhere((element) => element.id == findElement.id);
+        _interesatCharacters.add(findElement);
+      }
+      _interesatCharacters.refresh();
     } catch (e) {
       log("$e");
     }
@@ -159,6 +173,7 @@ class CharacterController extends GetxController {
     _searchCharacters.clear();
   }
 
+  //GET FAVOURITES CHARACTERS
   Future<void> getFavourites() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -190,5 +205,13 @@ class CharacterController extends GetxController {
 
   removeCharacterToList(Character character) {
     _favouritesCharacters.removeWhere((element) => element.id == character.id);
+  }
+
+  refreshInteresantCharacter() {
+    _interesatCharacters.refresh();
+  }
+
+  refreshFavouriteCharacter() {
+    _favouritesCharacters.refresh();
   }
 }

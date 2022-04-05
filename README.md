@@ -12,6 +12,7 @@
     - google_fonts: Para las fuentes y temas de la app.
     - Lazy_load: Carga de datos paginada.
     - shared_preferences: Guardar datos de forma local.
+    - share_plus: Funcionalidad de compartir - [https://flutteracademy.app](Flutteracademy - web propia)
 
 # STEP BY STEP
 
@@ -135,3 +136,27 @@
 ## Paso 11
 
 - Agregar un boton para imprimir la lista de favoritos exclusivamente.
+
+## Paso 12
+
+### Creación de funcionalidad compartir
+
+- Agragar paquete share_plus para compartir lo que deseemos.
+- Se añade la funcionalidad al boton de compartir personaje.
+- Lo que se compartira será el enlace a la web [https://flutteracademy.app](flutteracademy) - (web propia)
+
+# ASPECTOS A MEJORAR
+
+## Nota: Dada la rapidez y los cortos plazos en los que se ha realizado la app se ha tratado de realizar la app con las mayores funcionalidades y con un esqueleto lo mas claro, escalable y dinámico posible dentro del límite de tiempo establecido.
+
+- Se debería realizar una revisión del árbol de widget dentro de cada pantalla para ver si se puede globalizar mas parte del código.
+
+- Se debería realizar una revisión de los widgets para ver si se pueden globalizar y reutilizar de forma mas óptima en nuestro código.
+
+- Se debería dar uso de mas funcionalidades que mejorarían la claridad del código tales como:
+  - Enum
+  - swich - case
+
+- Se deberían haber usado pruebas unitarias proporcionadas por Flutter para realizar las buenas prácticas establecidas
+
+  - Web: [https://esflutter.dev/docs/cookbook/testing/unit/introductions](pruebas unitarias)

@@ -17,6 +17,9 @@ dependencies:
   # https://pub.dev/packages/shared_preferences
   shared_preferences: ^2.0.12
 
+  # https://pub.dev/packages/share_plus
+  share_plus: ^4.0.3
+
   ###
   ### FONTS
   ###

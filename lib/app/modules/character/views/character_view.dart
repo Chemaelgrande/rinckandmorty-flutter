@@ -117,7 +117,7 @@ class CharacterView extends GetView<CharacterController> {
                                 height: 20,
                               ),
                               Text(
-                                "Parece que tu viaje\n a terminado",
+                                "Parece que tu viaje\n ha terminado",
                                 style: TEXT_THEME_BLACK.headline1,
                                 textAlign: TextAlign.center,
                               )
@@ -137,8 +137,7 @@ class CharacterView extends GetView<CharacterController> {
                                   CharacterController characterController =
                                       Get.find();
 
-                                  characterController
-                                      .getFavourteCharactersByCategory();
+                                  characterController.getInteresantCharacters();
                                   Get.toNamed(
                                     Routes.CHARACTER_DETAILS,
                                     arguments: (controller

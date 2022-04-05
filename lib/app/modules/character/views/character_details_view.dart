@@ -9,6 +9,7 @@ import 'package:rickandmorty/app/widgets/cards/card_information_character.dart';
 import 'package:rickandmorty/app/widgets/actions/load_episodes_widget.dart';
 import 'package:rickandmorty/app/widgets/actions/load_interesant_character.dart';
 import 'package:rickandmorty/app/widgets/layout/top_details_character_widget.dart';
+import 'package:share_plus/share_plus.dart';
 
 class CharacterDetailsView extends GetView {
   CharacterDetailsView({Key? key}) : super(key: key);
@@ -98,7 +99,10 @@ class CharacterDetailsView extends GetView {
                       child: Center(
                         child: ButtonWidget(
                           text: "Compartir personaje",
-                          onPressed: () {},
+                          onPressed: () {
+                            Share.share(
+                                'Mira mi pagina https://flutteracademy.app/');
+                          },
                         ),
                       ),
                     ),

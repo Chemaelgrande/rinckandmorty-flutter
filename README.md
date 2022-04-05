@@ -12,7 +12,7 @@
     - google_fonts: Para las fuentes y temas de la app.
     - Lazy_load: Carga de datos paginada.
     - shared_preferences: Guardar datos de forma local.
-    - share_plus: Funcionalidad de compartir - [https://flutteracademy.app](Flutteracademy - web propia)
+    - share_plus: Funcionalidad de compartir - __[https://flutteracademy.app](Flutteracademy - web propia)__
 
 # STEP BY STEP
 
@@ -143,7 +143,7 @@
 
 - Agragar paquete share_plus para compartir lo que deseemos.
 - Se añade la funcionalidad al boton de compartir personaje.
-- Lo que se compartira será el enlace a la web [https://flutteracademy.app](flutteracademy) - (web propia)
+- Lo que se compartira será el enlace a la web __[https://flutteracademy.app](flutteracademy)__ - (web propia)
 
 # ASPECTOS A MEJORAR
 
@@ -159,4 +159,4 @@
 
 - Se deberían haber usado pruebas unitarias proporcionadas por Flutter para realizar las buenas prácticas establecidas
 
-  - Web: [https://esflutter.dev/docs/cookbook/testing/unit/introductions](pruebas unitarias)
+  - Web: __[https://esflutter.dev/docs/cookbook/testing/unit/introductions](pruebas unitarias)__

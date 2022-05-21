@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "rinckandmorty-flutter",
+            "name": "rickandmorty-flutter",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "rinckandmorty-flutter (profile mode)",
+            "name": "rickandmorty-flutter (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "rinckandmorty-flutter (release mode)",
+            "name": "rickandmorty-flutter (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

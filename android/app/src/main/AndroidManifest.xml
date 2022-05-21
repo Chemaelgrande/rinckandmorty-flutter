@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rickandmorty">
+    package="app.flutteracademy.rickandmorty">
    <application
         android:label="rickandmorty"
         android:name="${applicationName}"
